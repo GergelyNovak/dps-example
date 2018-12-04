@@ -1,0 +1,1 @@
+This is an example on how to host files on Github.
