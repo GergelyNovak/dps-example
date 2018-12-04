@@ -1,0 +1,29 @@
+{
+    "api_version": "v2",
+    "component": "dpaas",
+    "create_clusters": {
+        "helm": [
+            {
+                "chart_repo_url": "git@github.com:nsharma-git/dpaas-qe@rev:23fc27d@path:/k8s/helm-chart",
+                "cluster_config_repo_url": "git@github.com:nsharma-git/dpaas-qe@rev:23fc27d@path:/k8s/helm-chart/config/",
+                "security": "none",
+                "system_under_test_version": "DPS-1.0.0.0-43"
+            }
+        ]
+    },
+    "custom": {},
+    "system_test": {
+        "docker_image_url": "registry.eng.hortonworks.com/neeraj.sharma/dpaas-qe:1",
+        "init_containers": [],
+        "lifecycle": {
+            "terminate_cluster": "on_success"
+        },
+        "parallelization": {
+            "factor": 1
+        },
+        "test_cases": [
+            "FileProcessorsTest"
+        ],
+        "test_group": ""
+    }
+}
